@@ -1,4 +1,6 @@
 import "./lib/error-capture";
+import { config as loadDotenv } from "dotenv";
+loadDotenv();
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";

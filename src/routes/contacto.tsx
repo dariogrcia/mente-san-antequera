@@ -1,13 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { sendContact } from "@/lib/api/send-contact";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
       { title: "Contacto · Pedir cita con la Dra. Isabel Contreras" },
-      { name: "description", content: "Solicita tu primera consulta privada con la Dra. Isabel Contreras Pérez, psiquiatra en Andalucía." },
+      { name: "description", content: "Solicita tu primera consulta privada con la Dra. Isabel Contreras Pérez, psiquiatra en Antequera y Cabra." },
       { property: "og:title", content: "Contacto · Dra. Isabel Contreras Pérez" },
       { property: "og:description", content: "Pedir cita para consulta privada de psiquiatría." },
     ],
@@ -16,6 +18,28 @@ export const Route = createFileRoute("/contacto")({
 });
 
 function Contacto() {
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    const fd = new FormData(e.currentTarget);
+    try {
+      await sendContact({
+        data: {
+          nombre: fd.get("nombre") as string,
+          email: fd.get("email") as string,
+          telefono: (fd.get("telefono") as string) || undefined,
+          mensaje: fd.get("mensaje") as string,
+        },
+      });
+      setStatus("ok");
+      (e.target as HTMLFormElement).reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SiteHeader />
@@ -35,7 +59,7 @@ function Contacto() {
             <div className="mt-12 space-y-6">
               <ContactItem icon={<Mail size={18} />} label="Correo electrónico" value="isacompe@gmail.com" href="mailto:isacompe@gmail.com" />
               <ContactItem icon={<Phone size={18} />} label="Teléfono" value="+34 640 513 389" href="tel:+34640513389" />
-              <ContactItem icon={<MapPin size={18} />} label="Ámbito de consulta" value="Antequera · Córdoba · Andalucía" />
+              <ContactItem icon={<MapPin size={18} />} label="Ámbito de consulta" value="Antequera · Cabra" />
               <ContactItem icon={<Clock size={18} />} label="Horario de respuesta" value="Lunes a viernes, 9:00 — 19:00" />
             </div>
           </div>
@@ -43,12 +67,7 @@ function Contacto() {
           <div className="lg:col-span-6">
             <form
               className="bg-secondary/40 border border-border p-8 lg:p-10 space-y-6"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const data = new FormData(e.currentTarget);
-                const body = `Nombre: ${data.get("nombre")}%0D%0ATeléfono: ${data.get("telefono")}%0D%0A%0D%0A${data.get("mensaje")}`;
-                window.location.href = `mailto:isacompe@gmail.com?subject=Solicitud%20de%20cita&body=${body}`;
-              }}
+              onSubmit={handleSubmit}
             >
               <p className="eyebrow">Formulario</p>
               <h2 className="font-display text-3xl">Cuéntame brevemente</h2>
@@ -67,10 +86,21 @@ function Contacto() {
               </div>
               <button
                 type="submit"
-                className="w-full px-7 py-4 bg-primary text-primary-foreground text-xs uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors"
+                disabled={status === "sending" || status === "ok"}
+                className="w-full px-7 py-4 bg-primary text-primary-foreground text-xs uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Enviar solicitud
+                {status === "sending" ? "Enviando…" : status === "ok" ? "Mensaje enviado ✓" : "Enviar solicitud"}
               </button>
+              {status === "ok" && (
+                <p className="text-sm text-foreground/80">
+                  Gracias. La Dra. Contreras te responderá en 24–48 horas laborables.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-500">
+                  Ha ocurrido un error al enviar. Por favor, escríbenos directamente a isacompe@gmail.com.
+                </p>
+              )}
               <p className="text-xs text-muted-foreground">
                 Al enviar este formulario aceptas que tus datos se utilicen únicamente para
                 gestionar tu solicitud de cita. No se comparten con terceros.

@@ -56,10 +56,10 @@ function SobreMi() {
             <p>
               Actualmente trabajo como <strong className="text-foreground font-medium">Facultativa Especialista
               de Área en el Hospital de Antequera</strong> (Servicio Andaluz de Salud) y, en
-              paralelo, atiendo consulta privada. Continúo formándome con un Máster en
-              Terapias de Tercera Generación (UNIR) y un Máster en Psiquiatría Legal
-              dirigido por el Prof. Alfredo Calcedo en la Universidad Complutense de
-              Madrid.
+              paralelo, atiendo consulta privada. Completé el Máster en Terapias de
+              Tercera Generación (UNIR) y continúo formándome con el Máster en
+              Psiquiatría Legal dirigido por el Prof. Alfredo Calcedo en la Universidad
+              Complutense de Madrid.
             </p>
             <p>
               Mi práctica clínica combina la psicofarmacología con un enfoque integrador
@@ -71,11 +71,12 @@ function SobreMi() {
         </section>
 
         <section className="border-t border-border">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid md:grid-cols-3 gap-12">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               { n: "MIR", t: "Hospital Universitario de Jaén", s: "Especialización en Psiquiatría 2022–2026" },
               { n: "SAS", t: "Hospital de Antequera", s: "Facultativa Especialista de Área" },
               { n: "20+", t: "Publicaciones y pósters", s: "En congresos nacionales e internacionales" },
+              { n: "Colegiada", t: "292306690", s: "Colegio de Médicos de Málaga" },
             ].map((b) => (
               <div key={b.t}>
                 <p className="font-display text-5xl text-accent">{b.n}</p>

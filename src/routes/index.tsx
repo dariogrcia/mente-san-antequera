@@ -26,7 +26,7 @@ function Index() {
         <section className="relative">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-7 lg:pr-10">
-              <p className="eyebrow"><span className="rule" />Consulta privada · Andalucía</p>
+              <p className="eyebrow"><span className="rule" />Consulta privada · Antequera y Cabra</p>
               <h1 className="mt-6 font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.02] tracking-tight">
                 Una psiquiatría<br />
                 <em className="italic font-light text-accent">cercana</em>, rigurosa<br />
@@ -73,8 +73,23 @@ function Index() {
           </div>
         </section>
 
+        {/* CREDENTIALS STRIP */}
+        <section className="border-y border-border/60">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-5">
+            <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              <span>MIR Psiquiatría · Hospital Universitario de Jaén</span>
+              <span className="hidden sm:block text-border">|</span>
+              <span>Colegiada nº 292306690 · Col. de Médicos de Málaga</span>
+              <span className="hidden sm:block text-border">|</span>
+              <span>Facultativa SAS · Hospital de Antequera</span>
+              <span className="hidden sm:block text-border">|</span>
+              <span>Máster Psiquiatría Legal · UCM</span>
+            </div>
+          </div>
+        </section>
+
         {/* QUOTE BAND */}
-        <section className="border-y border-border bg-secondary/40">
+        <section className="border-b border-border bg-secondary/40">
           <div className="mx-auto max-w-5xl px-6 lg:px-10 py-20 text-center">
             <p className="font-display italic text-2xl md:text-3xl leading-snug text-foreground/85">
               «La salud mental no es la ausencia de dificultad, sino la posibilidad

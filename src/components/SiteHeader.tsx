@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 const nav = [
   { to: "/", label: "Inicio" },
@@ -33,6 +33,13 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
+          <a
+            href="tel:+34640513389"
+            className="flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors text-sm"
+          >
+            <Phone size={14} />
+            640 513 389
+          </a>
           <Link
             to="/contacto"
             className="ml-2 inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground text-xs uppercase tracking-[0.18em] hover:bg-primary/90 transition-colors"
