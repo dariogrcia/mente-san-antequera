@@ -27,16 +27,20 @@ function Index() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-7 lg:pr-10">
               <p className="eyebrow"><span className="rule" />Consulta privada · Antequera y Cabra</p>
-              <h1 className="mt-6 font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.02] tracking-tight">
-                Una psiquiatría<br />
-                <em className="italic font-light text-accent">cercana</em>, rigurosa<br />
-                y basada en la evidencia.
+              <h1 className="mt-6 font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.97] tracking-tight">
+                Dra. Isabel<br />
+                <em className="italic font-light text-accent">Contreras Pérez</em>
               </h1>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/75">
-                Soy la <strong className="font-medium">Dra. Isabel Contreras Pérez</strong>,
-                facultativa especialista en Psiquiatría. Acompaño a adolescentes y adultos
-                en procesos de diagnóstico y tratamiento de la salud mental, con un enfoque
-                integrador y profundamente humano.
+              <p className="mt-4 text-xs uppercase tracking-[0.28em] text-muted-foreground">
+                Facultativa Especialista en Psiquiatría
+              </p>
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/75 font-display italic">
+                «Una psiquiatría cercana, rigurosa y basada en la evidencia.»
+              </p>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/65">
+                Acompaño a adolescentes y adultos en procesos de diagnóstico y
+                tratamiento de la salud mental, con un enfoque integrador y
+                profundamente humano.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-3">
                 <Link
