@@ -4,10 +4,10 @@ import { MessageCircle } from "lucide-react";
 export function SiteFooter() {
   return (
     <>
-    <footer className="border-t border-border/60 mt-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid gap-12 md:grid-cols-3">
+    <footer className="border-t border-border/60 mt-40">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid gap-12 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl leading-tight">Dra. Isabel Contreras Pérez</p>
+          <p className="font-display text-[1.6rem] font-light leading-tight" style={{ fontVariationSettings: '"opsz" 48' }}>Dra. Isabel Contreras Pérez</p>
           <p className="text-sm text-muted-foreground mt-2">
             Facultativa Especialista en Psiquiatría
           </p>
@@ -29,7 +29,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/60">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-3">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-5 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-3">
           <p>© {new Date().getFullYear()} Isabel Contreras Pérez. Todos los derechos reservados.</p>
           <div className="flex flex-wrap gap-4 items-center">
             <p>Colegiada nº 292306690 · Col. Médicos Málaga</p>
