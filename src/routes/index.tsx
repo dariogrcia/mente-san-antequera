@@ -24,7 +24,7 @@ function Index() {
       <main className="flex-1">
         {/* HERO */}
         <section className="relative">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-12 items-end">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-20 lg:pt-28 pb-24 lg:pb-36 grid lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-7 lg:pr-10">
               <p className="eyebrow"><span className="rule" />Consulta privada · Antequera y Cabra</p>
               <h1 className="mt-6 font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.97] tracking-tight">
@@ -45,13 +45,13 @@ function Index() {
               <div className="mt-10 flex flex-wrap items-center gap-3">
                 <Link
                   to="/contacto"
-                  className="inline-flex items-center gap-2 px-7 py-4 bg-primary text-primary-foreground text-xs uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-[0.68rem] uppercase tracking-[0.22em] rounded-sm hover:bg-primary/85 hover:shadow-[0_8px_24px_-6px_oklch(0.32_0.045_155_/_0.35)] transition-all duration-200"
                 >
                   Solicitar primera consulta <ArrowUpRight size={16} />
                 </Link>
                 <Link
                   to="/sobre-mi"
-                  className="inline-flex items-center gap-2 px-7 py-4 border border-foreground/25 text-xs uppercase tracking-[0.22em] hover:border-foreground transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 border border-foreground/20 text-[0.68rem] uppercase tracking-[0.22em] rounded-sm hover:border-foreground/50 hover:bg-foreground/[0.03] transition-all duration-200"
                 >
                   Conocer a la doctora
                 </Link>
@@ -66,9 +66,9 @@ function Index() {
                   height={1280}
                   className="w-full h-[28rem] lg:h-[34rem] object-cover"
                 />
-                <div className="absolute -bottom-6 -left-6 bg-background border border-border p-6 max-w-[15rem] hidden lg:block">
-                  <p className="font-display text-3xl leading-none">5<span className="text-accent">+</span></p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-2">
+                <div className="absolute -bottom-6 -left-6 bg-background border border-border p-7 max-w-[15rem] hidden lg:block">
+                  <p className="font-display text-4xl leading-none">5<span className="text-accent">+</span></p>
+                  <p className="text-[0.65rem] uppercase tracking-[0.2em] leading-relaxed text-muted-foreground mt-2">
                     Años de formación especializada en hospital universitario
                   </p>
                 </div>
@@ -94,22 +94,22 @@ function Index() {
 
         {/* QUOTE BAND */}
         <section className="border-b border-border bg-secondary/40">
-          <div className="mx-auto max-w-5xl px-6 lg:px-10 py-20 text-center">
-            <p className="font-display italic text-2xl md:text-3xl leading-snug text-foreground/85">
+          <div className="mx-auto max-w-5xl px-6 lg:px-10 py-28 lg:py-36 text-center">
+            <p className="quote-editorial text-2xl md:text-[2.1rem] max-w-3xl mx-auto text-foreground/80 leading-[1.45]">
               «La salud mental no es la ausencia de dificultad, sino la posibilidad
               de habitarla con sentido. Mi trabajo es acompañar ese camino con ciencia,
               tiempo y escucha.»
             </p>
-            <p className="eyebrow mt-6">— Dra. Isabel Contreras</p>
+            <p className="eyebrow mt-8">— Dra. Isabel Contreras</p>
           </div>
         </section>
 
         {/* ÁREAS */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
+        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-28 lg:py-40">
           <div className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <p className="eyebrow"><span className="rule" />Áreas de atención</p>
-              <h2 className="font-display text-5xl mt-6 leading-[1.05]">
+              <h2 className="font-display text-[3.2rem] mt-6 leading-[1.05]">
                 Espacios clínicos para cada momento.
               </h2>
               <p className="mt-6 text-foreground/70 leading-relaxed">
@@ -129,9 +129,9 @@ function Index() {
                 { t: "TCA", d: "Anorexia, bulimia y trastornos de la conducta alimentaria." },
                 { t: "Psiquiatría legal", d: "Informes periciales y valoración forense." },
               ].map((a) => (
-                <div key={a.t} className="bg-background p-8 hover:bg-secondary/40 transition-colors group">
-                  <p className="font-display text-2xl">{a.t}</p>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{a.d}</p>
+                <div key={a.t} className="bg-background p-8 lg:p-10 hover:bg-secondary/30 hover:shadow-[0_4px_24px_-8px_oklch(0.32_0.045_155_/_0.10)] transition-all duration-300 group">
+                  <p className="font-display text-[1.4rem] leading-snug">{a.t}</p>
+                  <p className="text-[0.875rem] leading-relaxed text-muted-foreground mt-3">{a.d}</p>
                 </div>
               ))}
             </div>
@@ -143,10 +143,10 @@ function Index() {
           className="relative bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(180deg, color-mix(in oklab, var(--color-background) 92%, transparent), var(--color-background)), url(${textureImg})` }}
         >
-          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-28 lg:py-40 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="eyebrow"><span className="rule" />Mi forma de trabajar</p>
-              <h2 className="font-display text-5xl mt-6 leading-[1.05]">
+              <h2 className="font-display text-[3.2rem] mt-6 leading-[1.05]">
                 Tiempo clínico real. Ciencia actualizada. Trato humano.
               </h2>
             </div>
@@ -156,11 +156,11 @@ function Index() {
                 { n: "02", t: "Plan individualizado", d: "Integro psicofarmacología, psicoeducación y derivación a psicoterapia cuando aporta valor." },
                 { n: "03", t: "Seguimiento continuado", d: "Accesibilidad real entre consultas para ajustar tratamiento y resolver dudas." },
               ].map((s) => (
-                <div key={s.n} className="flex gap-6 border-t border-border pt-8">
-                  <p className="font-display text-3xl text-accent w-12 shrink-0">{s.n}</p>
+                <div key={s.n} className="flex gap-8 border-t border-border/60 pt-10">
+                  <p className="font-display text-[3.5rem] leading-none text-foreground/15 w-16 shrink-0 select-none font-light" style={{ fontVariationSettings: '"opsz" 72' }}>{s.n}</p>
                   <div>
-                    <p className="font-display text-2xl">{s.t}</p>
-                    <p className="text-foreground/70 mt-2 leading-relaxed">{s.d}</p>
+                    <p className="font-display text-[1.4rem]">{s.t}</p>
+                    <p className="text-foreground/65 text-[0.925rem] mt-2 leading-relaxed">{s.d}</p>
                   </div>
                 </div>
               ))}
@@ -169,9 +169,9 @@ function Index() {
         </section>
 
         {/* CTA */}
-        <section className="mx-auto max-w-5xl px-6 lg:px-10 py-24 lg:py-32 text-center">
+        <section className="mx-auto max-w-5xl px-6 lg:px-10 py-32 lg:py-44 text-center">
           <p className="eyebrow">Próximo paso</p>
-          <h2 className="font-display text-5xl md:text-6xl mt-6 leading-[1.05]">
+          <h2 className="font-display text-[3.5rem] md:text-[4.5rem] mt-6 leading-[1.05]">
             Si llevas tiempo dándole vueltas,<br />
             <em className="italic font-light">hablemos</em>.
           </h2>
@@ -181,7 +181,7 @@ function Index() {
           </p>
           <Link
             to="/contacto"
-            className="inline-flex items-center gap-2 mt-10 px-8 py-4 bg-primary text-primary-foreground text-xs uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 mt-10 px-8 py-4 bg-primary text-primary-foreground text-[0.68rem] uppercase tracking-[0.22em] rounded-sm hover:bg-primary/85 hover:shadow-[0_8px_24px_-6px_oklch(0.32_0.045_155_/_0.35)] transition-all duration-200"
           >
             Pedir cita <ArrowUpRight size={16} />
           </Link>
