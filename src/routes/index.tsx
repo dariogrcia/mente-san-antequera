@@ -129,7 +129,7 @@ function Index() {
                 { t: "TCA", d: "Anorexia, bulimia y trastornos de la conducta alimentaria." },
                 { t: "Psiquiatría legal", d: "Informes periciales y valoración forense." },
               ].map((a) => (
-                <div key={a.t} className="bg-background p-8 hover:bg-secondary/40 transition-colors group">
+                <div key={a.t} className="bg-background p-8 lg:p-10 hover:bg-secondary/30 hover:shadow-[0_4px_24px_-8px_oklch(0.32_0.045_155_/_0.10)] transition-all duration-300 group">
                   <p className="font-display text-2xl">{a.t}</p>
                   <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{a.d}</p>
                 </div>
