@@ -53,7 +53,6 @@ function Index() {
                   to="/sobre-mi"
                   className="inline-flex items-center gap-2 px-8 py-4 border border-foreground/20 text-[0.68rem] uppercase tracking-[0.22em] rounded-sm hover:border-foreground/50 hover:bg-foreground/[0.03] transition-all duration-200"
                 >
-                >
                   Conocer a la doctora
                 </Link>
               </div>
