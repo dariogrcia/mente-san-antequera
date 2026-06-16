@@ -130,8 +130,8 @@ function Index() {
                 { t: "Psiquiatría legal", d: "Informes periciales y valoración forense." },
               ].map((a) => (
                 <div key={a.t} className="bg-background p-8 lg:p-10 hover:bg-secondary/30 hover:shadow-[0_4px_24px_-8px_oklch(0.32_0.045_155_/_0.10)] transition-all duration-300 group">
-                  <p className="font-display text-2xl">{a.t}</p>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{a.d}</p>
+                  <p className="font-display text-[1.4rem] leading-snug">{a.t}</p>
+                  <p className="text-[0.875rem] leading-relaxed text-muted-foreground mt-3">{a.d}</p>
                 </div>
               ))}
             </div>
@@ -156,11 +156,11 @@ function Index() {
                 { n: "02", t: "Plan individualizado", d: "Integro psicofarmacología, psicoeducación y derivación a psicoterapia cuando aporta valor." },
                 { n: "03", t: "Seguimiento continuado", d: "Accesibilidad real entre consultas para ajustar tratamiento y resolver dudas." },
               ].map((s) => (
-                <div key={s.n} className="flex gap-6 border-t border-border pt-8">
-                  <p className="font-display text-3xl text-accent w-12 shrink-0">{s.n}</p>
+                <div key={s.n} className="flex gap-8 border-t border-border/60 pt-10">
+                  <p className="font-display text-[3.5rem] leading-none text-foreground/15 w-16 shrink-0 select-none font-light" style={{ fontVariationSettings: '"opsz" 72' }}>{s.n}</p>
                   <div>
-                    <p className="font-display text-2xl">{s.t}</p>
-                    <p className="text-foreground/70 mt-2 leading-relaxed">{s.d}</p>
+                    <p className="font-display text-[1.4rem]">{s.t}</p>
+                    <p className="text-foreground/65 text-[0.925rem] mt-2 leading-relaxed">{s.d}</p>
                   </div>
                 </div>
               ))}
