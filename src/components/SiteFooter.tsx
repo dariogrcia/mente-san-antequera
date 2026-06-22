@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
 import logoNegativo from "@/assets/logo-isabel-contreras-negativo.svg";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function SiteFooter() {
   return (
