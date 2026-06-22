@@ -86,7 +86,9 @@ function Servicios() {
         </section>
 
         {/* MODALIDADES */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
+        <section className="bg-cream-warm border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
+
           <div className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <p className="eyebrow"><span className="rule" />Modalidades</p>

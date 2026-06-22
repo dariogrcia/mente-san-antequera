@@ -94,7 +94,7 @@ function Index() {
         </section>
 
         {/* QUOTE BAND */}
-        <section className="border-b border-border bg-secondary/40">
+        <section className="border-b border-border bg-sage-tint">
           <div className="mx-auto max-w-5xl px-6 lg:px-10 py-28 lg:py-36 text-center">
             <p className="quote-editorial text-2xl md:text-[2.1rem] max-w-3xl mx-auto text-foreground/80 leading-[1.45]">
               «La salud mental no es la ausencia de dificultad, sino la posibilidad
