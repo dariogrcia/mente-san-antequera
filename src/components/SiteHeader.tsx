@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import logoHorizontal from "@/assets/logo-isabel-contreras-horizontal.svg";
+import logoIsotipo from "@/assets/logo-isabel-contreras-isotipo.svg";
 
 const nav = [
   { to: "/", label: "Inicio" },
@@ -15,11 +17,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-border/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-[4.5rem] flex items-center justify-between">
-        <Link to="/" className="font-display text-[1.15rem] tracking-tight leading-none">
-          <span className="block" style={{ fontVariationSettings: '"opsz" 32' }}>Dra. Isabel Contreras</span>
-          <span className="block text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground mt-0.5">
-            Psiquiatría
-          </span>
+        <Link to="/" aria-label="Dra. Isabel Contreras, Psiquiatra — Inicio" className="flex items-center">
+          <img
+            src={logoHorizontal}
+            alt="Dra. Isabel Contreras, Psiquiatra"
+            className="hidden sm:block h-10 lg:h-11 w-auto"
+          />
+          <img
+            src={logoIsotipo}
+            alt="Dra. Isabel Contreras, Psiquiatra"
+            className="sm:hidden h-9 w-auto"
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-[0.82rem] tracking-[0.02em]">
           {nav.map((n) => (
