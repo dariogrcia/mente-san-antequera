@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
 import logoNegativo from "@/assets/logo-isabel-contreras-negativo.svg";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function SiteFooter() {
   return (
@@ -52,7 +52,7 @@ export function SiteFooter() {
       aria-label="Contactar por WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1ebe5d] transition-colors"
     >
-      <MessageCircle size={26} fill="white" strokeWidth={0} />
+      <WhatsAppIcon className="h-6 w-6" />
     </a>
     </>
   );
