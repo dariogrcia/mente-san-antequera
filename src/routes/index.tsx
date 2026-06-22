@@ -81,14 +81,11 @@ function Index() {
         {/* CREDENTIALS STRIP */}
         <section className="border-y border-border/60">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-5">
-            <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              <span>MIR Psiquiatría · Hospital Universitario de Jaén</span>
-              <span className="hidden sm:block text-border">|</span>
-              <span>Colegiada nº 292306690 · Col. de Médicos de Málaga</span>
-              <span className="hidden sm:block text-border">|</span>
-              <span>Facultativa SAS · Hospital de Antequera</span>
-              <span className="hidden sm:block text-border">|</span>
-              <span>Máster Psiquiatría Legal · UCM</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y divide-border/60 sm:divide-y-0 sm:divide-x sm:divide-border/60 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              <span className="py-3 sm:py-0 px-4 text-center">MIR Psiquiatría · Hospital Universitario de Jaén</span>
+              <span className="py-3 sm:py-0 px-4 text-center">Colegiada nº 292306690 · Col. de Médicos de Málaga</span>
+              <span className="py-3 sm:py-0 px-4 text-center">Facultativa SAS · Hospital de Antequera</span>
+              <span className="py-3 sm:py-0 px-4 text-center">Máster Psiquiatría Legal · UCM</span>
             </div>
           </div>
         </section>
