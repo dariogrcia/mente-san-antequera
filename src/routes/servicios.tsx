@@ -112,7 +112,9 @@ function Servicios() {
               ))}
             </div>
           </div>
+          </div>
         </section>
+
 
         <section className="mx-auto max-w-5xl px-6 lg:px-10 py-24 text-center">
           <h2 className="font-display text-4xl md:text-5xl leading-tight">
