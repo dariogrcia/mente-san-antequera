@@ -152,9 +152,16 @@
     display: inline-block;
     width: 2.5rem;
     height: 1px;
-    background: var(--color-foreground);
-    opacity: 0.35;
+    background: var(--color-accent);
+    opacity: 0.75;
     vertical-align: middle;
     margin-right: 0.75rem;
+  }
+  .eyebrow { color: var(--color-accent); }
+  .bg-sage-tint {
+    background-color: color-mix(in oklab, var(--color-sage) 22%, var(--color-background));
+  }
+  .bg-cream-warm {
+    background-color: color-mix(in oklab, var(--color-clay) 6%, var(--color-background));
   }
 }

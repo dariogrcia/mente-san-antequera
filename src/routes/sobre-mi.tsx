@@ -70,7 +70,7 @@ function SobreMi() {
           </div>
         </section>
 
-        <section className="border-t border-border">
+        <section className="border-t border-border bg-sage-tint">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               { n: "MIR", t: "Hospital Universitario de Jaén", s: "Especialización en Psiquiatría 2022–2026" },

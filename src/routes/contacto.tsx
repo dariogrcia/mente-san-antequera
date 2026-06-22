@@ -3,7 +3,6 @@ import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { sendContact } from "@/lib/api/send-contact";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -18,26 +17,21 @@ export const Route = createFileRoute("/contacto")({
 });
 
 function Contacto() {
-  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "ok">("idle");
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
     const fd = new FormData(e.currentTarget);
-    try {
-      await sendContact({
-        data: {
-          nombre: fd.get("nombre") as string,
-          email: fd.get("email") as string,
-          telefono: (fd.get("telefono") as string) || undefined,
-          mensaje: fd.get("mensaje") as string,
-        },
-      });
-      setStatus("ok");
-      (e.target as HTMLFormElement).reset();
-    } catch {
-      setStatus("error");
-    }
+    const nombre = (fd.get("nombre") as string) || "";
+    const email = (fd.get("email") as string) || "";
+    const telefono = (fd.get("telefono") as string) || "";
+    const mensaje = (fd.get("mensaje") as string) || "";
+
+    const subject = `Solicitud de cita — ${nombre}`;
+    const body = `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono || "No indicado"}\n\n${mensaje}`;
+
+    window.location.href = `mailto:isacompe@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("ok");
   }
 
   return (
@@ -81,24 +75,18 @@ function Contacto() {
                   name="mensaje"
                   rows={5}
                   required
-                  className="w-full bg-background border border-border px-4 py-3 text-foreground focus:outline-none focus:border-foreground transition-colors resize-none"
+                  className="w-full bg-background border border-border px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors resize-none"
                 />
               </div>
               <button
                 type="submit"
-                disabled={status === "sending" || status === "ok"}
-                className="w-full px-7 py-4 bg-primary text-primary-foreground text-xs uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full px-7 py-4 bg-primary text-primary-foreground text-xs uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors"
               >
-                {status === "sending" ? "Enviando…" : status === "ok" ? "Mensaje enviado ✓" : "Enviar solicitud"}
+                Enviar solicitud
               </button>
               {status === "ok" && (
                 <p className="text-sm text-foreground/80">
-                  Gracias. La Dra. Contreras te responderá en 24–48 horas laborables.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-sm text-red-500">
-                  Ha ocurrido un error al enviar. Por favor, escríbenos directamente a isacompe@gmail.com.
+                  Se ha abierto tu cliente de correo para enviar la solicitud. Si no se abre automáticamente, escríbeme a <a href="mailto:isacompe@gmail.com" className="text-accent underline">isacompe@gmail.com</a>.
                 </p>
               )}
               <p className="text-xs text-muted-foreground">
@@ -135,7 +123,7 @@ function Field({ name, label, type = "text", required }: { name: string; label: 
         type={type}
         name={name}
         required={required}
-        className="w-full bg-background border border-border px-4 py-3 text-foreground focus:outline-none focus:border-foreground transition-colors"
+        className="w-full bg-background border border-border px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
       />
     </div>
   );
