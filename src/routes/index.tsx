@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImg from "@/assets/hero.jpg";
 import textureImg from "@/assets/texture.jpg";
+import logoPrincipal from "@/assets/logo-isabel-contreras-principal.svg";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -170,6 +171,11 @@ function Index() {
 
         {/* CTA */}
         <section className="mx-auto max-w-5xl px-6 lg:px-10 py-32 lg:py-44 text-center">
+          <img
+            src={logoPrincipal}
+            alt="Dra. Isabel Contreras, Psiquiatra"
+            className="mx-auto h-28 md:h-36 w-auto mb-10 opacity-95"
+          />
           <p className="eyebrow">Próximo paso</p>
           <h2 className="font-display text-[3.5rem] md:text-[4.5rem] mt-6 leading-[1.05]">
             Si llevas tiempo dándole vueltas,<br />

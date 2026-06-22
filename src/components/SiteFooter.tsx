@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
+import logoNegativo from "@/assets/logo-isabel-contreras-negativo.svg";
 
 export function SiteFooter() {
   return (
@@ -7,6 +8,11 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 mt-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid gap-12 md:grid-cols-3">
         <div>
+          <img
+            src={logoNegativo}
+            alt="Dra. Isabel Contreras, Psiquiatra"
+            className="h-20 w-auto mb-5"
+          />
           <p className="font-display text-[1.6rem] font-light leading-tight" style={{ fontVariationSettings: '"opsz" 48' }}>Dra. Isabel Contreras Pérez</p>
           <p className="text-sm text-muted-foreground mt-2">
             Facultativa Especialista en Psiquiatría
